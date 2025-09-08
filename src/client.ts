@@ -25,7 +25,7 @@ export default defineClientConfig({
     // Add Ant Design Vue
     app.use(Antd)
 
-    // Initialize global store
+    // Initialize global store after Pinia is available
     const globalStore = useGlobalStore()
 
     // Provide global store for components that need it
@@ -47,6 +47,12 @@ export default defineClientConfig({
   setup() {
     // Global setup logic using Composition API
     // This runs in the setup context of the root component
+
+    // Initialize theme on client side
+    if (typeof window !== 'undefined') {
+      const globalStore = useGlobalStore()
+      globalStore.initializeTheme()
+    }
   },
 
   layouts: {
