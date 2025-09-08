@@ -1,4 +1,4 @@
-export declare const useGlobalStore: import("pinia").StoreDefinition<"global", Pick<{
+export declare const useGlobalStore: import("pinia").StoreDefinition<"global", import("pinia")._UnwrapAll<Pick<{
     navStyle: import("vue").Ref<string, string>;
     isCollapsePageAnchor: import("vue").Ref<boolean, boolean>;
     isMobileSidebarOpen: import("vue").Ref<boolean, boolean>;
@@ -12,7 +12,7 @@ export declare const useGlobalStore: import("pinia").StoreDefinition<"global", P
     closeMobileSidebar: () => void;
     toggleDarkMode: (dark?: boolean) => void;
     initializeTheme: () => void;
-}, "navStyle" | "isCollapsePageAnchor" | "isMobileSidebarOpen" | "isDarkMode">, Pick<{
+}, "navStyle" | "isCollapsePageAnchor" | "isMobileSidebarOpen" | "isDarkMode">>, Pick<{
     navStyle: import("vue").Ref<string, string>;
     isCollapsePageAnchor: import("vue").Ref<boolean, boolean>;
     isMobileSidebarOpen: import("vue").Ref<boolean, boolean>;
