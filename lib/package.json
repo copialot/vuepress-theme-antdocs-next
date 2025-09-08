@@ -51,7 +51,7 @@
     "@vuepress/utils": "2.0.0-rc.20",
     "ant-design-vue": "^4.2.5",
     "lodash-es": "^4.17.21",
-    "pinia": "~2.1.7",
+    "pinia": "~2.0.36",
     "vue": "^3.2.47"
   },
   "devDependencies": {
@@ -65,7 +65,7 @@
   "peerDependencies": {
     "vuepress": "^2.0.0-rc.20",
     "vue": "^3.2.0",
-    "pinia": ">=2.1.0 <2.2.0"
+    "pinia": ">=2.0.30 <2.1.0"
   },
   "engines": {
     "node": ">=18.16.0"
