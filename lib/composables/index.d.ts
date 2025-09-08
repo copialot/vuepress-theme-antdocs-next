@@ -18,7 +18,7 @@ export declare function useSiteInfo(): {
     lang: import("vue").ComputedRef<string>;
     title: import("vue").ComputedRef<string>;
     description: import("vue").ComputedRef<string>;
-    locales: import("vue").ComputedRef<import("vuepress/core").SiteLocaleConfig>;
+    locales: import("vue").ComputedRef<import("@vuepress/core").SiteLocaleConfig>;
     routeLocale: import("vuepress/client").RouteLocaleRef;
 };
 /**

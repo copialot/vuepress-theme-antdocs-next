@@ -1,5 +1,5 @@
 {
-  "name": "vuepress-theme-antdocs",
+  "name": "vuepress-theme-antdocs-next",
   "title": "AntDocs of VuePress",
   "version": "2.0.0-beta.1",
   "description": "An Ant Design style theme for VuePress 2.x.",
@@ -46,6 +46,8 @@
   },
   "dependencies": {
     "@ant-design/icons-vue": "^7.0.1",
+    "@vuepress/core": "2.0.0-rc.25",
+    "@vuepress/utils": "2.0.0-rc.25",
     "ant-design-vue": "^4.2.5",
     "dayjs": "^1.11.18",
     "lodash-es": "^4.17.21",
