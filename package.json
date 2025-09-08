@@ -1,0 +1,65 @@
+{
+  "name": "vuepress-theme-antdocs",
+  "title": "AntDocs of VuePress",
+  "version": "2.0.0-beta.1",
+  "description": "An Ant Design style theme for VuePress 2.x.",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "keywords": [
+    "theme",
+    "vuepress",
+    "vuepress-theme",
+    "vuepress2",
+    "antd",
+    "antdocs",
+    "ant-design",
+    "vue3"
+  ],
+  "author": "Feng L.H.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zpfz/vuepress-theme-antdocs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zpfz/vuepress-theme-antdocs/issues"
+  },
+  "homepage": "https://antdocs.js.org/",
+  "license": "MIT",
+  "files": [
+    "lib",
+    "templates"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "dev": "tsc -b tsconfig.build.json --watch"
+  },
+  "dependencies": {
+    "ant-design-vue": "^4.2.5",
+    "lodash-es": "^4.17.21",
+    "pinia": "^2.2.6",
+    "vue": "^3.5.12"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^22.9.0",
+    "less": "^4.2.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.6.3",
+    "vuepress": "2.0.0-rc.25"
+  },
+  "peerDependencies": {
+    "vuepress": "^2.0.0-rc.25"
+  },
+  "engines": {
+    "node": ">=18.16.0"
+  }
+}
