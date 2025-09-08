@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "@ant-design/icons-vue": "^7.0.1",
+    "@vuepress/client": "2.0.0-rc.25",
     "@vuepress/core": "2.0.0-rc.25",
     "@vuepress/utils": "2.0.0-rc.25",
     "ant-design-vue": "^4.2.5",

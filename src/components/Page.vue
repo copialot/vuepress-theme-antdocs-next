@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { Content } from 'vuepress/client'
+import { Content } from '@vuepress/client'
 import PageEdit from './PageEdit.vue'
 import PageNav from './PageNav.vue'
 import PageAnchor from './PageAnchor.vue'
@@ -33,7 +33,7 @@ const globalStore = useGlobalStore()
 // Computed properties
 const pageAnchorConfig = computed(() => {
   return frontmatter.value.pageAnchor ||
-         themeConfig.value.pageAnchor || 
+         themeConfig.value.pageAnchor ||
          { anchorDepth: 2, isDisabled: false }
 })
 
@@ -42,12 +42,12 @@ const hasPageAnchor = computed(() => {
     globalStore.togglePageAnchor(true)
     return false
   }
-  
+
   if (!headers.value || headers.value.length === 0) {
     globalStore.togglePageAnchor(true)
     return false
   }
-  
+
   globalStore.togglePageAnchor(false)
   return true
 })
@@ -69,7 +69,7 @@ const hasPageAnchor = computed(() => {
 .theme-antdocs-content {
   &:not(.custom) {
     .wrapper;
-    
+
     > *:first-child {
       margin-top: @navbarHeight + 2rem;
     }

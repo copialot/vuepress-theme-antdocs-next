@@ -56,7 +56,7 @@
 
       <Content class="theme-antdocs-content custom" />
     </main>
-    
+
     <div v-if="data.footer" class="footer">
       <div
         v-if="data.footerWrap && data.footerWrap.length"
@@ -98,7 +98,7 @@
           </a-col>
         </a-row>
       </div>
-      
+
       <div class="footer-bottom">
         <p>{{ data.footer }}</p>
       </div>
@@ -108,7 +108,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { Content } from 'vuepress/client'
+import { Content } from '@vuepress/client'
 import { usePageInfo, useSiteInfo, useAssets } from '../composables'
 import { isExternal, ensureExt } from '../utils'
 
@@ -164,7 +164,7 @@ const resolveLink = (link: string) => {
 
       .ant-btn {
         margin: 0.5rem;
-        
+
         a {
           color: inherit;
           text-decoration: none;
@@ -259,7 +259,7 @@ const resolveLink = (link: string) => {
   .footer-bottom {
     border-top: 1px solid @borderColor;
     padding-top: 1.5rem;
-    
+
     p {
       margin: 0;
     }
@@ -303,7 +303,7 @@ const resolveLink = (link: string) => {
 
   .footer {
     padding: 1.5rem;
-    
+
     .footer-container {
       text-align: left;
     }

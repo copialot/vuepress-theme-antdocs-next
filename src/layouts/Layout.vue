@@ -29,7 +29,7 @@
 <script setup lang="ts">
 import { computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import { Content } from 'vuepress/client'
+import { Content } from '@vuepress/client'
 
 // Import components (these will be created in the next phase)
 import Home from '../components/Home.vue'
@@ -38,13 +38,13 @@ import Page from '../components/Page.vue'
 import Sidebar from '../components/Sidebar.vue'
 
 // Import composables
-import { 
-  usePageInfo, 
-  useSiteInfo, 
-  useThemeConfig, 
-  useNavigation, 
+import {
+  usePageInfo,
+  useSiteInfo,
+  useThemeConfig,
+  useNavigation,
   useSidebar,
-  useGlobalStore 
+  useGlobalStore
 } from '../composables'
 
 // Import utilities
@@ -64,7 +64,7 @@ const sidebarItems = computed(() => {
   // This will need to be implemented based on the theme config
   // For now, return empty array as placeholder
   return []
-  
+
   // TODO: Implement sidebar resolution logic
   // return resolveSidebarItems(
   //   page.value,
@@ -89,7 +89,7 @@ const pageClasses = computed(() => {
 onMounted(() => {
   // Initialize theme
   globalStore.initializeTheme()
-  
+
   // Router after each hook for closing mobile sidebar
   router.afterEach(() => {
     globalStore.closeMobileSidebar()

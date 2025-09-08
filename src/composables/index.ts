@@ -5,9 +5,7 @@ import {
   useSiteData,
   useRouteLocale,
   withBase
-} from 'vuepress/client'
-import type { PageData, SiteData } from 'vuepress/shared'
-
+} from '@vuepress/client'
 /**
  * Get current page data with type safety
  */

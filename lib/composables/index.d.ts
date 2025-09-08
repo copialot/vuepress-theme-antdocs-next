@@ -2,8 +2,8 @@
  * Get current page data with type safety
  */
 export declare function usePageInfo(): {
-    page: import("vuepress/client").PageDataRef<Record<string, unknown>>;
-    frontmatter: import("vue").ComputedRef<import("vuepress/client").PageFrontmatter<Record<string, unknown>>>;
+    page: import("@vuepress/client").PageDataRef<Record<string, unknown>>;
+    frontmatter: import("vue").ComputedRef<import("@vuepress/client").PageFrontmatter<Record<string, unknown>>>;
     headers: import("vue").ComputedRef<{}>;
     title: import("vue").ComputedRef<string>;
     path: import("vue").ComputedRef<string>;
@@ -13,13 +13,13 @@ export declare function usePageInfo(): {
  * Get site data with type safety
  */
 export declare function useSiteInfo(): {
-    site: import("vuepress/client").SiteDataRef;
+    site: import("@vuepress/client").SiteDataRef;
     base: import("vue").ComputedRef<"/" | `/${string}/`>;
     lang: import("vue").ComputedRef<string>;
     title: import("vue").ComputedRef<string>;
     description: import("vue").ComputedRef<string>;
     locales: import("vue").ComputedRef<import("@vuepress/core").SiteLocaleConfig>;
-    routeLocale: import("vuepress/client").RouteLocaleRef;
+    routeLocale: import("@vuepress/client").RouteLocaleRef;
 };
 /**
  * Get theme configuration
