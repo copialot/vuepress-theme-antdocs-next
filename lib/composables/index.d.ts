@@ -4,7 +4,7 @@
 export declare function usePageInfo(): {
     page: import("@vuepress/client").PageDataRef<Record<string, unknown>>;
     frontmatter: import("vue").ComputedRef<import("@vuepress/client").PageFrontmatter<Record<string, unknown>>>;
-    headers: import("vue").ComputedRef<{}>;
+    headers: import("vue").ComputedRef<import("@mdit-vue/types").MarkdownItHeader[]>;
     title: import("vue").ComputedRef<string>;
     path: import("vue").ComputedRef<string>;
     key: import("vue").ComputedRef<unknown>;

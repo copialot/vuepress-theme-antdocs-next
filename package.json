@@ -44,9 +44,9 @@
   },
   "dependencies": {
     "@ant-design/icons-vue": "^7.0.1",
-    "@vuepress/client": "2.0.0-rc.25",
-    "@vuepress/core": "2.0.0-rc.25",
-    "@vuepress/utils": "2.0.0-rc.25",
+    "@vuepress/client": "2.0.0-rc.20",
+    "@vuepress/core": "2.0.0-rc.20",
+    "@vuepress/utils": "2.0.0-rc.20",
     "ant-design-vue": "^4.2.5",
     "lodash-es": "^4.17.21",
     "pinia": "^2.2.6",
