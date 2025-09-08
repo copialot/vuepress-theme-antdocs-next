@@ -196,7 +196,9 @@ export function resolveSidebarItems(
   site: SiteData,
   localePath: string
 ): SidebarItem[] {
-  const { pages, themeConfig } = site
+  // Note: VuePress 2.x doesn't have pages in site data by default
+  // This would need to be implemented differently or use a plugin
+  const themeConfig = (site as any).themeConfig || {}
 
   const localeConfig = localePath && themeConfig.locales
     ? themeConfig.locales[localePath] || themeConfig
@@ -213,7 +215,7 @@ export function resolveSidebarItems(
   } else {
     const { base, config } = resolveMatchingConfig(regularPath, sidebarConfig)
     return config
-      ? config.map((item: any) => resolveItem(item, pages, base))
+      ? config.map((item: any) => resolveItem(item, [], base)) // Empty pages array for now
       : []
   }
 }
@@ -225,11 +227,14 @@ function resolveHeaders(page: PageData): SidebarItem[] {
   const headers = groupHeaders(page.headers || [])
   return [{
     text: page.title,
-    link: null,
+    link: page.path,
     children: headers.map(h => ({
       text: h.title,
       link: page.path + '#' + h.slug,
-      children: h.children || []
+      children: (h.children || []).map(child => ({
+        text: child.title,
+        link: page.path + '#' + child.slug
+      }))
     }))
   }]
 }

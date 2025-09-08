@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-const { execSync } = require('child_process')
-const fs = require('fs')
-const path = require('path')
+import { execSync } from 'child_process'
+import fs from 'fs'
 
 console.log('🚀 Building VuePress Theme AntDocs v2.x...')
 
@@ -26,7 +25,9 @@ try {
 console.log('📁 Copying assets...')
 const copyFiles = [
   { from: 'templates', to: 'lib/templates' },
-  { from: 'src/styles', to: 'lib/styles' }
+  { from: 'src/styles', to: 'lib/styles' },
+  { from: 'src/layouts', to: 'lib/layouts' },
+  { from: 'src/components', to: 'lib/components' }
 ]
 
 copyFiles.forEach(({ from, to }) => {

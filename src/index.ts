@@ -87,10 +87,16 @@ export const antDocsTheme = (options: AntDocsThemeOptions = {}): Theme => {
     ],
 
     // Bundler configuration
-    extendsBundlerOptions: (bundlerOptions, app) => {
+    extendsBundlerOptions: (bundlerOptions: any, app) => {
       // Add Less support with JavaScript enabled
       if (app.options.bundler.name === '@vuepress/bundler-webpack') {
         bundlerOptions.scss = bundlerOptions.scss || {}
+        bundlerOptions.scss.sassOptions = {
+          ...bundlerOptions.scss.sassOptions,
+          // Suppress Sass deprecation warnings
+          quietDeps: true,
+          verbose: false,
+        }
         bundlerOptions.less = bundlerOptions.less || {}
         bundlerOptions.less.lessOptions = {
           ...bundlerOptions.less.lessOptions,
@@ -103,16 +109,35 @@ export const antDocsTheme = (options: AntDocsThemeOptions = {}): Theme => {
         bundlerOptions.viteOptions.css = bundlerOptions.viteOptions.css || {}
         bundlerOptions.viteOptions.css.preprocessorOptions =
           bundlerOptions.viteOptions.css.preprocessorOptions || {}
+
+        // Configure Sass to suppress deprecation warnings
+        bundlerOptions.viteOptions.css.preprocessorOptions.scss = {
+          ...bundlerOptions.viteOptions.css.preprocessorOptions.scss,
+          quietDeps: true,
+          verbose: false,
+        }
+
         bundlerOptions.viteOptions.css.preprocessorOptions.less = {
           ...bundlerOptions.viteOptions.css.preprocessorOptions.less,
           javascriptEnabled: true,
         }
+
+        // Configure dayjs and its plugins for proper ES module support
+        bundlerOptions.viteOptions.optimizeDeps = bundlerOptions.viteOptions.optimizeDeps || {}
+        bundlerOptions.viteOptions.optimizeDeps.include = [
+          ...(bundlerOptions.viteOptions.optimizeDeps.include || []),
+          'dayjs',
+          'dayjs/plugin/advancedFormat',
+          'dayjs/plugin/customParseFormat',
+          'dayjs/plugin/weekday',
+          'dayjs/plugin/localeData',
+          'dayjs/plugin/weekOfYear',
+          'dayjs/plugin/weekYear',
+          'dayjs/plugin/quarterOfYear'
+        ]
       }
     },
   }
 }
 
 export default antDocsTheme
-
-// Export types
-export type { AntDocsThemeOptions }

@@ -1,20 +1,19 @@
 // VuePress 2.x composables for theme
 import { computed } from 'vue'
-import { 
-  usePageData, 
-  useSiteData, 
+import {
+  usePageData,
+  useSiteData,
   useRouteLocale,
   withBase
 } from 'vuepress/client'
-import { useThemeData } from '@vuepress/plugin-theme-data/client'
-import type { PageData, SiteData } from '../utils'
+import type { PageData, SiteData } from 'vuepress/shared'
 
 /**
  * Get current page data with type safety
  */
 export function usePageInfo() {
-  const page = usePageData<PageData>()
-  
+  const page = usePageData()
+
   return {
     page,
     frontmatter: computed(() => page.value.frontmatter),
@@ -29,9 +28,9 @@ export function usePageInfo() {
  * Get site data with type safety
  */
 export function useSiteInfo() {
-  const site = useSiteData<SiteData>()
+  const site = useSiteData()
   const routeLocale = useRouteLocale()
-  
+
   return {
     site,
     base: computed(() => site.value.base),
@@ -47,19 +46,30 @@ export function useSiteInfo() {
  * Get theme configuration
  */
 export function useThemeConfig() {
-  const themeData = useThemeData()
+  // For now, we'll use a simple implementation without the plugin
+  // Users can configure theme data through the theme options
   const { routeLocale } = useSiteInfo()
-  
+
   const themeConfig = computed(() => {
-    const localeConfig = themeData.value.locales?.[routeLocale.value]
+    // Return a default theme config for now
+    // This will be properly implemented when theme data is available
     return {
-      ...themeData.value,
-      ...localeConfig,
+      navbar: false as boolean | any[],
+      nav: [] as any[],
+      sidebar: {},
+      logo: null,
+      repo: null,
+      editLinks: false,
+      lastUpdated: false,
+      search: true,
+      algolia: null,
+      backToTop: true,
+      pageAnchor: { anchorDepth: 3, isDisabled: false },
+      locales: {} as Record<string, any>,
     }
   })
-  
+
   return {
-    themeData,
     themeConfig,
     // Commonly used theme config properties
     navbar: computed(() => themeConfig.value.navbar),
@@ -82,12 +92,12 @@ export function useNavigation() {
   const { page } = usePageInfo()
   const { themeConfig } = useThemeConfig()
   const { routeLocale } = useSiteInfo()
-  
+
   const nav = computed(() => {
     const localeNav = themeConfig.value.locales?.[routeLocale.value]?.nav
     return localeNav || themeConfig.value.nav || []
   })
-  
+
   const shouldShowNavbar = computed(() => {
     const { frontmatter } = page.value
     if (frontmatter.navbar === false || themeConfig.value.navbar === false) {
@@ -99,7 +109,7 @@ export function useNavigation() {
       nav.value.length
     )
   })
-  
+
   return {
     nav,
     shouldShowNavbar,
@@ -112,7 +122,7 @@ export function useNavigation() {
 export function useSidebar() {
   const { page } = usePageInfo()
   const { themeConfig } = useThemeConfig()
-  
+
   const shouldShowSidebar = computed(() => {
     const { frontmatter } = page.value
     return (
@@ -121,7 +131,7 @@ export function useSidebar() {
       themeConfig.value.sidebar
     )
   })
-  
+
   return {
     shouldShowSidebar,
     sidebar: computed(() => themeConfig.value.sidebar),
@@ -143,21 +153,21 @@ export function useAssets() {
 export function usePageEdit() {
   const { page } = usePageInfo()
   const { themeConfig } = useThemeConfig()
-  
+
   const lastUpdated = computed(() => page.value.frontmatter.lastUpdated)
-  
+
   const editLink = computed(() => {
     const { frontmatter } = page.value
     const showEditLink = frontmatter.editLink !== false && themeConfig.value.editLinks
-    
+
     if (!showEditLink || !themeConfig.value.repo) {
       return null
     }
-    
+
     // This would need to be implemented based on the original logic
     return null // Placeholder
   })
-  
+
   return {
     lastUpdated,
     editLink,

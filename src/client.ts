@@ -2,6 +2,25 @@ import { defineClientConfig } from 'vuepress/client'
 import { createPinia } from 'pinia'
 import Antd from 'ant-design-vue'
 
+// Import and configure dayjs before Ant Design Vue
+import dayjs from 'dayjs'
+import advancedFormat from 'dayjs/plugin/advancedFormat'
+import customParseFormat from 'dayjs/plugin/customParseFormat'
+import weekday from 'dayjs/plugin/weekday'
+import localeData from 'dayjs/plugin/localeData'
+import weekOfYear from 'dayjs/plugin/weekOfYear'
+import weekYear from 'dayjs/plugin/weekYear'
+import quarterOfYear from 'dayjs/plugin/quarterOfYear'
+
+// Extend dayjs with plugins
+dayjs.extend(advancedFormat)
+dayjs.extend(customParseFormat)
+dayjs.extend(weekday)
+dayjs.extend(localeData)
+dayjs.extend(weekOfYear)
+dayjs.extend(weekYear)
+dayjs.extend(quarterOfYear)
+
 // Import layouts
 import Layout from './layouts/Layout.vue'
 import NotFound from './layouts/NotFound.vue'
@@ -18,13 +37,13 @@ export default defineClientConfig({
     // Add Pinia store
     const pinia = createPinia()
     app.use(pinia)
-    
+
     // Add Ant Design Vue
     app.use(Antd)
 
     // Initialize global store
     const globalStore = useGlobalStore()
-    
+
     // Provide global store for components that need it
     app.provide('globalStore', globalStore)
 

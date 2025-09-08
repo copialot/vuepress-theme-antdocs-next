@@ -1,0 +1,16 @@
+{
+  "name": "test-antdocs-theme",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "2.0.0-rc.25",
+    "@vuepress/bundler-vite": "2.0.0-rc.25"
+  },
+  "dependencies": {
+    "vuepress-theme-antdocs": "file:.."
+  }
+}

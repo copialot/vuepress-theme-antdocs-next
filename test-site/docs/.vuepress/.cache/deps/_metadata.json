@@ -1,0 +1,88 @@
+{
+  "hash": "e0bd91f3",
+  "configHash": "0076e803",
+  "lockfileHash": "8caf5d54",
+  "browserHash": "b6e4e36a",
+  "optimized": {
+    "dayjs": {
+      "src": "../../../../../node_modules/.pnpm/dayjs@1.11.18/node_modules/dayjs/dayjs.min.js",
+      "file": "dayjs.js",
+      "fileHash": "9fe6676a",
+      "needsInterop": true
+    },
+    "dayjs/plugin/advancedFormat": {
+      "src": "../../../../../node_modules/.pnpm/dayjs@1.11.18/node_modules/dayjs/plugin/advancedFormat.js",
+      "file": "dayjs_plugin_advancedFormat.js",
+      "fileHash": "ca491a2b",
+      "needsInterop": true
+    },
+    "dayjs/plugin/customParseFormat": {
+      "src": "../../../../../node_modules/.pnpm/dayjs@1.11.18/node_modules/dayjs/plugin/customParseFormat.js",
+      "file": "dayjs_plugin_customParseFormat.js",
+      "fileHash": "f0a8ebfc",
+      "needsInterop": true
+    },
+    "dayjs/plugin/weekday": {
+      "src": "../../../../../node_modules/.pnpm/dayjs@1.11.18/node_modules/dayjs/plugin/weekday.js",
+      "file": "dayjs_plugin_weekday.js",
+      "fileHash": "48012094",
+      "needsInterop": true
+    },
+    "dayjs/plugin/localeData": {
+      "src": "../../../../../node_modules/.pnpm/dayjs@1.11.18/node_modules/dayjs/plugin/localeData.js",
+      "file": "dayjs_plugin_localeData.js",
+      "fileHash": "71122b9f",
+      "needsInterop": true
+    },
+    "dayjs/plugin/weekOfYear": {
+      "src": "../../../../../node_modules/.pnpm/dayjs@1.11.18/node_modules/dayjs/plugin/weekOfYear.js",
+      "file": "dayjs_plugin_weekOfYear.js",
+      "fileHash": "27c70356",
+      "needsInterop": true
+    },
+    "dayjs/plugin/weekYear": {
+      "src": "../../../../../node_modules/.pnpm/dayjs@1.11.18/node_modules/dayjs/plugin/weekYear.js",
+      "file": "dayjs_plugin_weekYear.js",
+      "fileHash": "8a9cecd7",
+      "needsInterop": true
+    },
+    "dayjs/plugin/quarterOfYear": {
+      "src": "../../../../../node_modules/.pnpm/dayjs@1.11.18/node_modules/dayjs/plugin/quarterOfYear.js",
+      "file": "dayjs_plugin_quarterOfYear.js",
+      "fileHash": "c3d4df31",
+      "needsInterop": true
+    },
+    "@vue/devtools-api": {
+      "src": "../../../../node_modules/.pnpm/@vue+devtools-api@8.0.1/node_modules/@vue/devtools-api/dist/index.js",
+      "file": "@vue_devtools-api.js",
+      "fileHash": "a72c0c9b",
+      "needsInterop": false
+    },
+    "@vuepress/shared": {
+      "src": "../../../../node_modules/.pnpm/@vuepress+shared@2.0.0-rc.25/node_modules/@vuepress/shared/dist/index.js",
+      "file": "@vuepress_shared.js",
+      "fileHash": "1b1b6a3f",
+      "needsInterop": false
+    },
+    "vue": {
+      "src": "../../../../../node_modules/.pnpm/vue@3.5.21_typescript@5.9.2/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "3e4c24aa",
+      "needsInterop": false
+    },
+    "vue-router": {
+      "src": "../../../../node_modules/.pnpm/vue-router@4.5.1_vue@3.5.21/node_modules/vue-router/dist/vue-router.esm-bundler.js",
+      "file": "vue-router.js",
+      "fileHash": "fe8ac4d2",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-BYK3B6TY": {
+      "file": "chunk-BYK3B6TY.js"
+    },
+    "chunk-BUSYA2B4": {
+      "file": "chunk-BUSYA2B4.js"
+    }
+  }
+}
